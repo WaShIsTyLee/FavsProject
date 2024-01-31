@@ -4,6 +4,6 @@ public interface ILibrary {
     void addFav();
     void deleteFav();
     void updateFav();
-    void showFav(Fav fav);
-    void showFavs(Fav [] favs);
+  //  void showFav(Fav fav);
+   // void showFavs(Fav [] favs);
 }
