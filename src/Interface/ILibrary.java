@@ -8,4 +8,5 @@ public interface ILibrary {
     void updateFav();
     void showFav(Favs fav);
     Favs[] showFavs();
+
 }

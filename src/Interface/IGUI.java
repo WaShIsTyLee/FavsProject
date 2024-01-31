@@ -1,6 +1,7 @@
 package Interface;
 
 public interface IGUI {
+    void printStart();
     void showMainMenu();
     void showFavMenu();
     void showAddFavMenu();
