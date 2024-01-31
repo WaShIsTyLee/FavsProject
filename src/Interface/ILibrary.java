@@ -1,9 +1,11 @@
 package Interface;
 
+import Model.Entity.Favs;
+
 public interface ILibrary {
-    void addFav();
+    boolean addFav(Favs fav);
     void deleteFav();
     void updateFav();
-    void showFav(Fav fav);
-    void showFavs(Fav [] favs);
+    void showFav(Favs fav);
+    Favs[] showFavs();
 }
