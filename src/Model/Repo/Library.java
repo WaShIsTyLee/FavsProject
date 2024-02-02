@@ -2,7 +2,6 @@ package Model.Repo;
 
 import Interface.ILibrary;
 import Model.Entity.Favs;
-import Model.Entity.Game;
 
 public class Library implements ILibrary {
     private static final int Tam = 10;
@@ -28,19 +27,34 @@ public class Library implements ILibrary {
         return result;
     }
 
-    @Override
-    public void deleteFav() {
 
+    @Override
+    public boolean deleteFav(Favs fav) {
+        boolean result = false;
+        if (getPosFav(fav) == 0) {
+            for (int i = 0; i < favs.length; i++) {
+
+                if (favs[i] == fav) {
+                    favs[i] = null;
+                    result = true;
+                }
+            }
+        }
+        return result;
     }
 
     @Override
-    public void updateFav() {
-
+    public void updateFav(Favs fav) {
+        updateFavMenu();
+        showAddFavMenu();
     }
 
-    @Override
-    public void showFav(Favs fav) {
 
+    @Override
+    public Favs showFav(Favs fav) {
+        System.out.println("Tu fav añadido es: " + fav.getClass().getSimpleName());
+
+        return fav;
     }
 
     @Override
@@ -51,9 +65,9 @@ public class Library implements ILibrary {
 
     private int getPosFav(Favs fav) {
         int result = -1;
-        for (int i = 0; i<favs.length;i++){
-            if (favs[i]!=null && favs[i].equals(fav)){
-                result=i;
+        for (int i = 0; i < favs.length; i++) {
+            if (favs[i] != null && favs[i].equals(fav)) {
+                result = i;
                 break;
             }
         }
