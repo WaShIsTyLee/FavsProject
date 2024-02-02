@@ -4,6 +4,9 @@ import Interface.IGUI;
 import Model.Entity.Favs;
 import Model.Entity.Game;
 import Model.Entity.Movie;
+import Model.Entity.Song;
+
+import java.util.Scanner;
 
 public class GUI  implements IGUI {
     public static void  main(String[] args) {
@@ -53,7 +56,7 @@ public class GUI  implements IGUI {
         System.out.println("----------------------------------");
         Favs result;
 
-        int opcion = leeEntero("Inserte una opción");
+        int opcion = leeEntero("Inserte una opción");gir
         switch (opcion){
             case 1:
                 result=new Game();
@@ -64,15 +67,15 @@ public class GUI  implements IGUI {
             default:
                 result=new Song();
         }
-        result.setNombre(leeString("Inserte el nombre del favorito"));
+        result.setName(leeString("Inserte el nombre del favorito"));
         result.setID(leeString("Inserte el ID "));
         if (opcion==1){
-            ((Game)result).setPrecio(leeEntero("Inserte el precio de su juego"));
+            ((Game)result).setPrice(leeEntero("Inserte el precio de su juego"));
 
         }else  if (opcion==2){
-            ((Movie)result).setGenero(leeString("Inserte el género d ela película"));
+            ((Movie)result).setGender(leeString("Inserte el género d ela película"));
         }else {
-            ((Song)result).setArtista(leeString("Inserte el artista de la canción"));
+            ((Song)result).setArtist(leeString("Inserte el artista de la canción"));
         }
         return result;
 
@@ -86,5 +89,22 @@ public class GUI  implements IGUI {
     @Override
     public void showUpdateFavMenu() {
 
+    }
+
+
+
+
+
+    public int leeEntero(String msg) {
+        Scanner teclado = new Scanner(System.in);
+        System.out.print(msg+": ");
+        return teclado.nextInt();
+    }
+
+
+    public String leeString(String msg) {
+        Scanner teclado = new Scanner(System.in);
+        System.out.print(msg+": ");
+        return teclado.nextLine();
     }
 }
