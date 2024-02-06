@@ -12,6 +12,7 @@ public class Library implements ILibrary {
     }
 
 
+
     @Override
     public boolean addFav(Favs fav) {
         boolean result = false;
@@ -53,7 +54,6 @@ public class Library implements ILibrary {
     @Override
     public Favs showFav(Favs fav) {
         System.out.println("Tu fav añadido es: " + fav.getClass().getSimpleName());
-
         return fav;
     }
 

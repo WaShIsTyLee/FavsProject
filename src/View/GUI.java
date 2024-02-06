@@ -56,7 +56,7 @@ public class GUI  implements IGUI {
         System.out.println("----------------------------------");
         Favs result;
 
-        int opcion = leeEntero("Inserte una opción");gir
+        int opcion = leeEntero("Inserte una opción");
         switch (opcion){
             case 1:
                 result=new Game();

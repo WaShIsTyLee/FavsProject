@@ -1,8 +1,14 @@
 package Controller;
 
 import Interface.IController;
+import Model.Entity.Favs;
+import Model.Repo.Library;
+import View.GUI;
 
 public class Controller implements IController {
+
+    GUI gui = new GUI();
+    Library libray = new Library();
 
     @Override
     public void start() {
@@ -21,6 +27,7 @@ public class Controller implements IController {
 
     @Override
     public void controllerAddFavMenu() {
+        libray.addFav(gui.showAddFavMenu(gui.showFavMenu()));
 
     }
 
