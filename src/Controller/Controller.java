@@ -21,7 +21,12 @@ public class Controller implements IController {
 
     @Override
     public void controllerAddFavMenu() {
-
+        string = showmenuquequiereselieminar();
+        library.deletefav(string);
+        si true
+            showeleiminadocorrecta,e4nte
+                    else
+                        showerro
     }
 
     @Override
